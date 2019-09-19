@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="mainscene" extends="Scene">
+<script type="text/brightscript"  uri="pkg:/components/mainscene.brs"/>
+	<children>
+		<Label id="myLabel"
+		width="1280"
+		height="720"
+		wrap = "true"
+		translation="[50, 100]"
+		horizAlign="center"
+		/>
+	</children>
+</component>
