@@ -3,10 +3,24 @@
 <script type="text/brightscript"  uri="pkg:/components/mainscene.brs"/>
 	<children>
 		<Label id="myLabel"
-		width="1280"
-		height="720"
+		width="800"
+		height="300"
 		wrap = "true"
 		translation="[50, 100]"
+		horizAlign="center"
+		/>
+		<Label id="frequencyTable"
+		width="800"
+		height="300"
+		wrap = "true"
+		translation="[50, 400]"
+		horizAlign="center"
+		/>
+		<Label id="bitAssign"
+		width="800"
+		height="300"
+		wrap = "true"
+		translation="[50, 700]"
 		horizAlign="center"
 		/>
 	</children>
