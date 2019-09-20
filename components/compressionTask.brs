@@ -32,18 +32,28 @@ end function
 
 Function encodeData(data as String) as String
     if data = invalid or data = "" then return "invalid"
-    symbolFrequency = charCount(data)
-
+    ' count the frequency if each char
+    symbolFrequency = sortArr(charCount(data))
+    printArray(symbolFrequency)
+    ' put the sorted arr into a tree
+    createTree(symbolFrequency)
     return "done"
 end function
 
-Sub printAssocArray(o as Object) as void
-    for each i in symbolFrequency.keys()
-        ? i
+Sub printArray(o as Dynamic) as void
+    ? type(o)
+    for each i in o
+        ? i.key, i.value
     end for
 end sub
 
-Function sortAssocArray(o as Object) as Void
+Function sortArr(o as Object) as Dynamic
+    ar = CreateObject("roArray", o.count(), true)
+    for each i in o.items()
+        ar.push({key: i.key, value: i.value})
+    end for
+    ar.sortBy("value")
+    return ar
 end Function
 
 Function charCount(data as String) as Object
@@ -55,6 +65,22 @@ Function charCount(data as String) as Object
         end if
         f.AddReplace(c, incrementVal)
     end for
-
     return f
 end function
+
+Function createTree(o as Object) as void
+    ' ar = CreateObject("roArray", o.count(), true)
+    ' ' Create a leaf node for each symbol
+    ' for each i in o
+    '     ' and add it to the priority queue'
+    '     ? "adding element " i.key
+    '     ar.push(i)
+    ' end for
+    ' While there is more than one node
+    while o.count() > 1
+        ' remove two highest nodes
+        l = o.pop()
+        r = o.pop()
+
+    end while
+end Function
